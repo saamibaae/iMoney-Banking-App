@@ -71,22 +71,22 @@ public class iMoneyApp {
 
         System.out.println("Adding FOOD transactions...");
 
-        cal.set(2025, Calendar.NOVEMBER, 1);
+        cal.set(2026, Calendar.FEBRUARY, 1);
         expenseTracker.addManualTransaction("Grocery Shopping", 52.0,
             TransactionCategory.FOOD, cal.getTime(), "Weekly shopping", "John Doe");
         bankAccount.withdraw(52.0);
 
-        cal.set(2025, Calendar.NOVEMBER, 5);
+        cal.set(2026, Calendar.FEBRUARY, 5);
         expenseTracker.syncTransaction("Tesco Supermarket", 48.0,
             TransactionCategory.FOOD, cal.getTime(), "Groceries", "TXN001");
         bankAccount.withdraw(48.0);
 
-        cal.set(2025, Calendar.NOVEMBER, 10);
+        cal.set(2026, Calendar.FEBRUARY, 10);
         expenseTracker.addManualTransaction("Sainsbury's", 55.0,
             TransactionCategory.FOOD, cal.getTime(), "Food expenses", "John Doe");
         bankAccount.withdraw(55.0);
 
-        cal.set(2025, Calendar.NOVEMBER, 15);
+        cal.set(2026, Calendar.FEBRUARY, 15);
         expenseTracker.syncTransaction("Asda", 50.0,
             TransactionCategory.FOOD, cal.getTime(), "Monthly shopping", "TXN002");
         bankAccount.withdraw(50.0);
@@ -95,22 +95,22 @@ public class iMoneyApp {
 
         System.out.println("\nAdding TRANSPORTATION transactions...");
 
-        cal.set(2025, Calendar.NOVEMBER, 2);
+        cal.set(2026, Calendar.FEBRUARY, 2);
         expenseTracker.syncTransaction("Uber", 35.0,
             TransactionCategory.TRANSPORTATION, cal.getTime(), "Taxi to work", "TXN003");
         bankAccount.withdraw(35.0);
 
-        cal.set(2025, Calendar.NOVEMBER, 8);
+        cal.set(2026, Calendar.FEBRUARY, 8);
         expenseTracker.addManualTransaction("Petrol Station", 40.0,
             TransactionCategory.TRANSPORTATION, cal.getTime(), "Fuel", "John Doe");
         bankAccount.withdraw(40.0);
 
-        cal.set(2025, Calendar.NOVEMBER, 12);
+        cal.set(2026, Calendar.FEBRUARY, 12);
         expenseTracker.syncTransaction("Train Ticket", 45.0,
             TransactionCategory.TRANSPORTATION, cal.getTime(), "Commute", "TXN004");
         bankAccount.withdraw(45.0);
 
-        cal.set(2025, Calendar.NOVEMBER, 18);
+        cal.set(2026, Calendar.FEBRUARY, 16);
         expenseTracker.addManualTransaction("Bus Pass", 50.0,
             TransactionCategory.TRANSPORTATION, cal.getTime(), "Monthly pass", "John Doe");
         bankAccount.withdraw(50.0);
@@ -119,7 +119,7 @@ public class iMoneyApp {
 
         System.out.println("\nAdding BILLS transaction...");
 
-        cal.set(2025, Calendar.NOVEMBER, 1);
+        cal.set(2026, Calendar.FEBRUARY, 1);
         expenseTracker.syncTransaction("Electricity Bill", 85.0,
             TransactionCategory.BILLS, cal.getTime(), "Utility payment", "TXN005");
         bankAccount.withdraw(85.0);
@@ -128,7 +128,7 @@ public class iMoneyApp {
 
         System.out.println("\nAdding SHOPPING transaction...");
 
-        cal.set(2025, Calendar.NOVEMBER, 5);
+        cal.set(2026, Calendar.FEBRUARY, 5);
         expenseTracker.addManualTransaction("Zara", 95.0,
             TransactionCategory.SHOPPING, cal.getTime(), "Clothing", "John Doe");
         bankAccount.withdraw(95.0);
@@ -137,7 +137,7 @@ public class iMoneyApp {
 
         System.out.println("\nAdding additional transaction...");
 
-        cal.set(2025, Calendar.NOVEMBER, 20);
+        cal.set(2026, Calendar.FEBRUARY, 17);
         expenseTracker.syncTransaction("McDonald's", 15.0,
             TransactionCategory.FOOD, cal.getTime(), "Fast food", "TXN006");
         bankAccount.withdraw(15.0);

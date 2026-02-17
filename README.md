@@ -9,6 +9,7 @@ iMoney is a banking application that helps users track expenses, manage budgets,
 ## Features
 
 ### Core Functionality
+
 - **Dual Transaction Types**: Supports both bank-synced and manually entered transactions
 - **Budget Management**: Set weekly and monthly spending limits across multiple categories
 - **Overdraft Monitoring**: Automatic calculation of overdraft charges (9p per £100 daily)
@@ -17,6 +18,7 @@ iMoney is a banking application that helps users track expenses, manage budgets,
 - **Spending Analytics**: Identify highest spending categories and get detailed breakdowns
 
 ### Transaction Categories
+
 - Transportation
 - Bills
 - Food
@@ -26,6 +28,7 @@ iMoney is a banking application that helps users track expenses, manage budgets,
 ## Technical Highlights
 
 ### Object-Oriented Design
+
 - **Encapsulation**: All fields private with public getters/setters for controlled access
 - **Inheritance**: Abstract Transaction class extended by SyncedTransaction and ManualTransaction
 - **Polymorphism**: Runtime method selection for transaction display based on actual object type
@@ -33,6 +36,7 @@ iMoney is a banking application that helps users track expenses, manage budgets,
 - **Composition**: Manager pattern for separation of concerns
 
 ### Architecture
+
 ```
 com.imoney
 ├── enums          # Type-safe constants (TransactionCategory, Priority, etc.)
@@ -43,35 +47,45 @@ com.imoney
 ```
 
 ### Data Storage
+
 Uses ArrayList collections to simulate database storage, demonstrating collection framework proficiency without external dependencies.
 
 ## Getting Started
 
 ### Prerequisites
+
 - Java Development Kit (JDK) 8 or higher
 - Terminal or Command Prompt
 
 ### Compilation
 
+**Option 1: From project root (recommended)**
+
 ```bash
-# Navigate to project directory
+# Create bin directory for compiled classes
+mkdir bin
+
+# Compile all files with UTF-8 encoding
+javac -encoding UTF-8 -d bin -sourcepath src/main/java src/main/java/com/imoney/iMoneyApp.java src/main/java/com/imoney/enums/*.java src/main/java/com/imoney/interfaces/*.java src/main/java/com/imoney/models/*.java src/main/java/com/imoney/managers/*.java
+```
+
+**Option 2: From src/main/java directory**
+
+```bash
 cd iMoney-Banking-App/src/main/java
 
-# Compile all files
 javac -encoding UTF-8 com/imoney/**/*.java
-
-# Or compile from root
-javac -encoding UTF-8 -d bin -sourcepath src/main/java src/main/java/com/imoney/iMoneyApp.java
 ```
 
 ### Running the Application
 
 ```bash
-# From src/main/java directory
-java com.imoney.iMoneyApp
-
-# Or from bin directory (if compiled with -d bin)
+# From project root (if compiled with -d bin option)
 java -cp bin com.imoney.iMoneyApp
+
+# OR from src/main/java directory (if compiled from there)
+cd src/main/java
+java com.imoney.iMoneyApp
 ```
 
 ## Usage Example
@@ -89,6 +103,7 @@ When you run the application, it automatically:
 9. Displays all notifications and alerts
 
 ### Sample Output
+
 ```
 ======================================================================
                      iMONEY BANKING APP
@@ -116,17 +131,20 @@ SAVINGS GOALS
 ## Key Classes
 
 ### Transaction Hierarchy
+
 - **Transaction** (Abstract): Base class for all transactions
 - **SyncedTransaction**: Automatically imported from bank with transaction ID
 - **ManualTransaction**: User-entered transactions with entry timestamp
 
 ### Manager Classes
+
 - **ExpenseTracker**: Manages transactions and spending limits
 - **NotificationManager**: Handles all system notifications
 - **SavingsManager**: Tracks savings goals and progress
 - **OverdraftCalculator**: Calculates overdraft charges based on exact formula
 
 ### Domain Models
+
 - **BankAccount**: Manages account balance and overdraft facility
 - **SpendingLimit**: Defines weekly/monthly spending thresholds per category
 - **SavingGoal**: Tracks financial goals with target amounts and dates
@@ -135,20 +153,23 @@ SAVINGS GOALS
 ## Business Rules
 
 ### Spending Limits (Default Values)
+
 | Category       | Weekly Min-Max | Monthly Min-Max |
-|---------------|----------------|-----------------|
-| Transportation| £33 - £40      | £132 - £160     |
-| Bills         | £50 - £53      | £200 - £212     |
-| Food          | £45 - £50      | £180 - £200     |
-| Shopping      | £30 - £32      | £120 - £128     |
+| -------------- | -------------- | --------------- |
+| Transportation | £33 - £40      | £132 - £160     |
+| Bills          | £50 - £53      | £200 - £212     |
+| Food           | £45 - £50      | £180 - £200     |
+| Shopping       | £30 - £32      | £120 - £128     |
 
 ### Overdraft Calculation
+
 - **Formula**: 9 pence per £100 borrowed, calculated daily
 - **Example**: £70 overdraft = (70 / 100) × 0.09 = £0.063 per day
 - **Weekly estimate**: Daily charge × 7
 - **Monthly estimate**: Daily charge × 30
 
 ### Alert Triggers
+
 - **Budget Warning**: When spending reaches 80% of limit
 - **Budget Exceeded**: When spending surpasses 100% of limit
 - **Overdraft Warning**: When balance goes negative
@@ -199,6 +220,7 @@ iMoney-Banking-App/
 ## Learning Outcomes
 
 This project demonstrates:
+
 - Clean code principles and proper Java conventions
 - Effective use of Java Collections Framework
 - OOP principles applied to real-world problems
@@ -210,17 +232,21 @@ This project demonstrates:
 ## Customization
 
 ### Adding New Transaction Categories
+
 1. Add enum value to `TransactionCategory.java`
 2. Add corresponding spending limit in `ExpenseTracker.initializeDefaultSpendingLimits()`
 3. Update display methods in `iMoneyApp.java` if needed
 
 ### Modifying Spending Limits
+
 Edit the hardcoded values in `ExpenseTracker.initializeDefaultSpendingLimits()` method.
 
 ### Adding Savings Goals
+
 Add new goals in `SavingsManager.initializeDefaultGoals()` with target amount, date, and frequency.
 
 ### Changing Overdraft Formula
+
 Modify the `DAILY_RATE_PER_100` constant and calculation logic in `OverdraftCalculator.java`.
 
 ## Future Enhancements
